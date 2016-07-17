@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<block>
+  <name>hro_sdrplay_vc</name>
+  <key>sdrplay_hro_sdrplay_vc</key>
+  <category>sdrplay</category>
+  <import>import sdrplay</import>
+  <make>sdrplay.hro_sdrplay_vc($gRdb, $fsMHz, $rfMHz, $bwType, $lfType)</make>
+
+  <param>
+    <name>gRdb</name>
+    <key>gRdb</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>fsMHz</name>
+    <key>fsMHz</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>rfMHz</name>
+    <key>rfMHz</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>bwType</name>
+    <key>bwType</key>
+    <type>int</type>
+    <option>
+      <name>mir_sdr_BW_0_200</name>
+      <key>200</key>
+    </option>
+    <option>
+      <name>mir_sdr_BW_0_300</name>
+      <key>300</key>
+    </option>
+    <option>
+      <name>mir_sdr_BW_0_600</name>
+      <key>600</key>
+    </option>
+    <option>
+      <name>mir_sdr_BW_1_536</name>
+      <key>1536</key>
+    </option>
+    <option>
+      <name>mir_sdr_BW_5_000</name>
+      <key>5000</key>
+    </option>
+    <option>
+      <name>mir_sdr_BW_7_000</name>
+      <key>7000</key>
+    </option>
+    <option>
+      <name>mir_sdr_BW_8_000</name>
+      <key>8000</key>
+    </option>
+  </param>
+    
+  <param>
+    <name>lfType</name>
+    <key>lfType</key>
+    <type>int</type>
+    <option>
+      <name>mir_sdr_IF_Zero</name>
+      <key>0</key>
+    </option>
+    <option>
+      <name>mir_sdr_IF_0_450</name>
+      <key>450</key>
+    </option>
+    <option>
+      <name>mir_sdr_IF_1_620</name>
+      <key>1620</key>
+    </option>
+    <option>
+      <name>mir_sdr_IF_2_048</name>
+      <key>2048</key>
+    </option>
+  </param>
+
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+  
+  <doc>
+  mir_sdr_Init
+  Parameters:
+  gRdB	Gain reduction in dB, see default gain reduction tables, section 5
+	0-102
+  fsMHz	Specifies the ADC sample frequency in MHz, typical values between 0.5MHz and 12MHz
+  rfMHz	Specifies the tuner centre frequency in MHz, see frequency allocation tables, section 6
+  bwType	Specifies the bandwidth to be used, see list in enumerated type for supported modes.
+  ifType	Specifies the IF to be used, see list in enumerated type for supported modes.
+  samplesPerPacket	Pointer to an unsigned integer which returns the number of samples that will be returned
+			for this configuration in each call to mir_sdr_ReadPacket()
+  Return:
+  mir_sdr_ErrT	Error code (SUCCESS = 0, FAIL = non 0)
+  
+  Frequency tables:
+   100kHz – 11.999999MHz
+   12MHz – 29.999999MHz
+   30MHz – 59.999999MHz
+   60MHz – 119.999999MHz
+  120MHz – 249.999999MHz
+  250MHz – 419.999999MHz
+  420MHz – 999.999999MHz
+  1GHz – 2GHz
+
+  </doc>
+</block>
