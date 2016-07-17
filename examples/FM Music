@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<cubicsdr_session>
+    <header>
+        <version>0.2.0-beta-rc2</version>
+        <center_freq>102397614</center_freq>
+        <sample_rate>1000000</sample_rate>
+    </header>
+    <demodulators>
+        <demodulator>
+            <bandwidth>200000</bandwidth>
+            <frequency>102900000</frequency>
+            <type>FM</type>
+            <squelch_level>-100</squelch_level>
+            <squelch_enabled>1</squelch_enabled>
+            <output_device>PulseAudio</output_device>
+            <gain>1</gain>
+            <muted>1</muted>
+        </demodulator>
+        <demodulator>
+            <bandwidth>200000</bandwidth>
+            <frequency>102100000</frequency>
+            <type>FM</type>
+            <squelch_level>-100</squelch_level>
+            <squelch_enabled>1</squelch_enabled>
+            <output_device>PulseAudio</output_device>
+            <gain>1</gain>
+            <muted>1</muted>
+            <active>1</active>
+        </demodulator>
+    </demodulators>
+</cubicsdr_session>
