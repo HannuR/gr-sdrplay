@@ -1,0 +1,34 @@
+Build:
+cd build
+cmake ..
+make install
+
+do make install as root (su ...)
+
+
+Uses: 
+/usr/local/lib/libmirsdapi-rsp.so
+
+LINK w.so:
+/lib/CMakeLists add the libtar to list target_link_lireries
+######################
+## HRo add libmirsdapi-rsp
+target_link_libraries(
+  test-sdrplay
+  ${GNURADIO_RUNTIME_LIBRARIES}
+  ${Boost_LIBRARIES}
+  ${CPPUNIT_LIBRARIES}
+  gnuradio-sdrplay
+  mirsdrapi-rsp
+)
+
+COMPILE w. cpp: 
+To add cpp files add link in lib and add the cpp file into 
+list(APPEND sdrplay_sources
+    hro_sdrplay_vc_impl.cc worker.cpp
+)
+
+RUN w. so:
+swigMakeLists.txt add the library to 
+set(GR_SWIG_LIBRARIES gnuradio-sdrplay mirsdrapi-rsp)
+

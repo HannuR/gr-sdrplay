@@ -1,0 +1,6 @@
+mark block not requiring throttle
+see if vector data would be of use
+add message chango freq / change bandwidth
+add messge out freq / bandwidth
+
+use so with reflection
